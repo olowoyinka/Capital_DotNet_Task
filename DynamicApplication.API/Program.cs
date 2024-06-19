@@ -1,4 +1,5 @@
 using DynamicApplication.DataAccess;
+using DynamicApplication.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services
+       .AddServices()
        .AddDataAccess(builder.Configuration);
 
 var app = builder.Build();
